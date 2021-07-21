@@ -15,7 +15,8 @@ from Deliverable import *
 app = Flask(__name__)
 
 zipf = UploadSet('zipf', ARCHIVES)
-UPLOAD_FOLD = '/Users/dankovacevich/Desktop/DeliverableWebsite'
+wd = os.getcwd()
+UPLOAD_FOLD = wd 
 app.config['UPLOADED_ZIPF_DEST'] = UPLOAD_FOLD
 configure_uploads(app, zipf)
 
@@ -27,8 +28,8 @@ def upload():
           
         zipfile = request.files['zipfile']
         if zipfile:
-            zipf.save(request.files['zipfile'])
-            filename = secure_filename(zipfile.filename)
+            filename = zipf.save(request.files['zipfile'])
+          #  filename = secure_filename(zipfile.filename)
     
       return render_template('upload.html')
   
