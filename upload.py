@@ -45,7 +45,7 @@ def postresults():
         del zf
         skills = []
         os.remove(filename)
-    return render_template('Report.html')
+        return render_template('Report.html')
  
     
 if __name__ == '__main__':
