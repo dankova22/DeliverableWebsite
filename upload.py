@@ -43,6 +43,7 @@ def postresults():
             zf.mustHave(names)
         zf.report() 
         del zf
+        skills = []
         os.remove(filename)
     return render_template('Report.html')
  
