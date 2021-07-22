@@ -188,6 +188,7 @@ class ZipFolder:
     #Open html report and write opening tags, define style
     wd = os.getcwd()
     os.chdir(wd + '/templates' )
+    os.remove('Report.html')
     f = open('Report.html','w')
     message = """ 
     <!DOCTYPE html>
